@@ -1,0 +1,25 @@
+{
+    "name": "Dark pattern catcher",
+    "version": "1.0.0",
+    "description": "Extension helps to detect dark patterns and avoid them",
+    "manifest_version": 3,
+    "author": "Sarunas Praspaliauskas",
+    "content_scripts": [{
+        "js": ["scripts/content.js",
+        "scripts/darkPatterns/countdownTimer.js",
+        "scripts/darkPatterns/preselection.js",
+        "scripts/darkPatterns/misdirection.js"],
+        "css": ["styles/content.css"],
+        "matches": ["https://*/*"]
+    }],
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Dark pattern catcher"
+    },
+    "permissions": [
+        "tabs", "scripting", "storage"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+       ]
+}
